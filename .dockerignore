@@ -1,0 +1,35 @@
+
+# Git
+.git/
+.gitignore
+
+# Python virtual environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+**/secrets.toml
+
+# Python cache and logs
+.pytest_cache/
+.mypy_cache/
+.coverage
+*.log
+
+# Large ML artifacts and generated files
+jupyter_notebook/models/
+jupyter_notebook/checkpoints/
+jupyter_notebook/resume_embeddings.pkl
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

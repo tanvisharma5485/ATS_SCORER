@@ -4,12 +4,18 @@ import requests
 import streamlit as st
 
 
+import os
+
 DEFAULT_BACKEND_URL = "http://localhost:8000"
 
+BACKEND_URL = os.getenv("BACKEND_URL", DEFAULT_BACKEND_URL).rstrip("/")
 
 def _backend_url() -> str:
+    env_url = os.getenv("BACKEND_URL")
+    if env_url:
+        return env_url.rstrip("/")
     try:
-        return st.secrets["backend"]["url"]
+        return st.secrets["backend"]["url"].rstrip("/")
     except (KeyError, FileNotFoundError):
         return DEFAULT_BACKEND_URL
 
