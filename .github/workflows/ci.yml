@@ -3,9 +3,11 @@ name: ATS Scorer CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   test:
@@ -28,4 +30,4 @@ jobs:
       - name: Run automated tests
         env:
           PYTHONPATH: .
-      run: pytest -v tests/
+        run: pytest -v tests/
