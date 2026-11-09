@@ -80,6 +80,7 @@ jobs:
           echo "Repository: $GITHUB_REPOSITORY"
           echo "Branch/ref: $GITHUB_REF"
           echo "Event: $GITHUB_EVENT_NAME"
+          echo "AWS Role ARN: ${{ secrets.AWS_ROLE_ARN }}"
 
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v4
