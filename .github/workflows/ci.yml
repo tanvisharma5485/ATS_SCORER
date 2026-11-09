@@ -85,7 +85,7 @@ jobs:
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-to-assume: arn:aws:iam::583372807484:role/GitHubActions-ATS-Deploy-Role
           aws-region: ${{ vars.AWS_REGION }}
 
       - name: Deploy to EC2 using SSM
