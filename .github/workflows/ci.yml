@@ -75,6 +75,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Debug GitHub identity
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Branch/ref: $GITHUB_REF"
+          echo "Event: $GITHUB_EVENT_NAME"
+
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
